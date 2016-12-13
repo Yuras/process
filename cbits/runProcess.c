@@ -341,16 +341,13 @@ runInteractiveProcess (char *const args[],
         waitpid(pid, NULL, 0);
 
         if (fdStdIn == -1) {
-            close(fdStdInput[0]);
             close(fdStdInput[1]);
         }
         if (fdStdOut == -1) {
             close(fdStdOutput[0]);
-            close(fdStdOutput[1]);
         }
         if (fdStdErr == -1) {
             close(fdStdError[0]);
-            close(fdStdError[1]);
         }
 
         pid = -1;
